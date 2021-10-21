@@ -39,23 +39,32 @@
                 <div id="affichageEquipement">
                     <div>
                         <h4>PRODUCTION</h4>
-                        <h3>0</h3>
+                        <h5 id="equipementProd">0</h5>
                     </div>
                     <div>
                         <h4>USAGE</h4>
+<<<<<<< Updated upstream
                         <h3 id="equipementUsage">0</h3>
                     </div>
                     <div>
                         <h4>TOTAL</h4>
                         <h3 id="equipementTotal">0</h3>
+=======
+                        <h5 id="equipementUsage">0</h5>
+                    </div>
+                    <div>
+                        <h4>TOTAL</h4>
+                        <h5 id="equipementTotal">0</h5>
+>>>>>>> Stashed changes
                     </div>
                     <div>
                         <h4>ANNUEL</h4>
-                        <h3>0</h3>
+                        <h5 id="equipementAnnuel">0</h5>
                     </div>
                 </div>
             </div>
             <div id="cloud">
+                <h3>CLOUD</h3>
                 <div id="choixCloud">
                     <label for="nbGoCloud">Nombre de Go utilisé en Cloud</label>
                     <input type="number" name="nbGoCloud" id="nbGoCloud" onchange="cloud($('#nbGoCloud').val())">
@@ -64,12 +73,53 @@
                 </div>
                 <div id="affichageCloud">
                     <div>
+<<<<<<< Updated upstream
                         <h4>ANNUEL</h4>
                         <h3 id="affichageCloudAnnuel">0</h3>
                     </div>
                 </div>
             </div>
+=======
+                        <h4>QUOTIDIEN</h4>
+                        <h5>0</h5>
+                    </div>
+                    <div>
+                        <h4>ANNUEL</h4>
+                        <h5>0</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="streaming">
+                <h3>STREAMING</h3>
+                <div id="choixStreaming">
+                    <label for="nbHeureStreamingQuotidien">Nombre d'heure de streaming par jour</label>
+                    <input type="number" name="nbHeureStreamingQuotidien" id="nbHeureStreamingQuotidien">
+                </div>
+                <div id="affichageStreaming">
+                    <div>
+                        <h4>QUOTIDIEN</h4>
+                        <h5>0</h5>
+                    </div>
+                    <div>
+                        <h4>ANNUEL</h4>
+                        <h5>0</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="avion">
+                <h3>AVION</h3>
+                <div id="choixAvion">
+                    <label for="nbKmAvionAnnuel">Nombre de kilomètre parcouru annuellement en avion</label>
+                    <input type="number" name="nbKmAvionAnnuel" id="nbKmAvionAnnuel">
+                </div>
+                <div id="affichageAvion">
+                    <h4>ANNUEL</h4>
+                    <h5>0</h5>
+                </div>
+            </div>
+>>>>>>> Stashed changes
             <div id="trajetTravail">
+                <h3>TRAJET QUOTIDIEN</h3>
                 <div id="choixTrajetTravail">
                     <label for="nbKmAllerRetour">Nombre de kilomètre de votre trajet (Aller/Retour) quotidien pour aller au travail en Km</label>
                     <input type="number" name="nbKmAllerRetour" id="nbKmAllerRetour">
@@ -82,13 +132,13 @@
                 </div>
                 <div id="affichageTrajetTravail">
                     <h4>IMPACT D'UN ALLER RETOUR</h4>
-                    <h3>0</h3>
-                    <h3>0</h3>
-                    <h3>0</h3>
+                    <h5>0</h5>
+                    <h5>0</h5>
+                    <h5>0</h5>
                     <h4>TOTAL ANNUEL</h4>
-                    <h3>0</h3>
-                    <h3>0</h3>
-                    <h3>0</h3>
+                    <h5>0</h5>
+                    <h5>0</h5>
+                    <h5>0</h5>
                 </div>
             </div>
             <div id="avion">
@@ -103,6 +153,7 @@
             </div>
         </div>
         <div id="impact">
+            <h3>LA CONSOMMATION TOTALE REPRÉSENTE</h3>
             <div id="impactTot">
                 <div class="card">
                     <img src="img/ordi.png" alt="Ordinateur">
@@ -141,6 +192,10 @@
             </div>
         </div>
     </main>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     <script src="./script.js"></script>
 </body>
 
