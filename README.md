@@ -1,1 +1,0 @@
-# Calculatrice-G_IT
