@@ -27,9 +27,9 @@
                 <h3>ÉQUIPEMENT</h3>
                 <div id="choixEquipement">
                     <label for="nbanneeUtilisation">Nombre d'année d'utilisation</label>
-                    <input type="number" name="nbAnneeUtilisation" id="nbAnneeUtilisation" onchange="consoMoni($('#nbEcranSupp').val(),$('#nbAnneeUtilisation').val())">
+                    <input type="number" max="6" min="0" name="nbAnneeUtilisation" id="nbAnneeUtilisation" onchange="consoMoni($('#nbEcranSupp').val(),$('#nbAnneeUtilisation').val())">
                     <label for="nbEcranSupp">Nombre d'écran supplémentaire</label>
-                    <input type="number" name="nbEcranSupp" id="nbEcranSupp" onchange="consoMoni($('#nbEcranSupp').val(),$('#nbAnneeUtilisation').val())">
+                    <input type="number" max="6" min="0" name="nbEcranSupp" id="nbEcranSupp" onchange="consoMoni($('#nbEcranSupp').val(),$('#nbAnneeUtilisation').val())">
                     <label for="smartphone">Avez-vous un smartphone</label>
                     <input type="radio" name="smartphone" id="ouiSmartphone" onchange="smart()">
                     <label for="ouiSmartphone">Oui</label>
@@ -58,9 +58,9 @@
             <div id="cloud">
                 <div id="choixCloud">
                     <label for="nbGoCloud">Nombre de Go utilisé en Cloud</label>
-                    <input type="number" name="nbGoCloud" id="nbGoCloud" onchange="cloud($('#nbGoCloud').val())">
+                    <input type="number" max="6" min="0" name="nbGoCloud" id="nbGoCloud" onchange="cloud($('#nbGoCloud').val())">
                     <label for="nbMailQuotidien">Nombre de mail envoyé quotidiennement</label>
-                    <input type="number" name="nbMailQuotidien" id="nbMailQuotidien" onchange="cloud($('#nbGoCloud').val())">
+                    <input type="number" max="6" min="0" name="nbMailQuotidien" id="nbMailQuotidien" onchange="cloud($('#nbGoCloud').val())">
                 </div>
                 <div id="affichageCloud">
                     <div>
@@ -71,15 +71,20 @@
             </div>
             <div id="trajetTravail">
                 <div id="choixTrajetTravail">
-                    <label for="nbKmAllerRetour">Nombre de kilomètre de votre trajet (Aller/Retour) quotidien pour aller au travail en Km</label>
-                    <input type="number" name="nbKmAllerRetour" id="nbKmAllerRetour">
-
+                    <!-- <label for="nbKmAllerRetour">Nombre de kilomètre de votre trajet (Aller/Retour) quotidien pour aller au travail en Km</label>
+                    <input type="number" max="6" min="0" name="nbKmAllerRetour" id="nbKmAllerRetour" onchange="cloud($('#nbGoCloud').val())"> -->
+                    <label for="nbKmVoiture">Nombre de kilomètre de votre trajet (Aller/Retour) quotidien en voiture</label>
+                    <input id="nbKmVoiture" type="text" onchange="transport($('#nbKmVoiture').val(),3)">
+                    <label for="nbKmBus">Nombre de kilomètre de votre trajet (Aller/Retour) quotidien en bus</label>
+                    <input id="nbKmBus" type="text" onchange="transport($('#nbKmBus').val(),7)">
+                    <label for="nbKmPieds">Nombre de kilomètre de votre trajet (Aller/Retour) quotidien en vélo ou à pieds</label>
+                    <input id="nbKmPieds" type="text" onchange="transport($('#nbKmPieds').val(),5)">
                 </div>
                 <div id="affichageTrajetTravail">
                     <h4>IMPACT D'UN ALLER RETOUR</h4>
-                    <h3>0</h3>
-                    <h3>0</h3>
-                    <h3>0</h3>
+                    <h3 id="affichage_voiture">0</h3>
+                    <h3 id="affichage_bus">0</h3>
+                    <h3 id="affichage_pieds">0</h3>
                     <h4>TOTAL ANNUEL</h4>
                     <h3>0</h3>
                     <h3>0</h3>
@@ -89,11 +94,11 @@
             <div id="avion">
                 <div id="choixAvion">
                     <label for="nbKmAvionAnnuel">Nombre de kilomètre parcouru annuellement en avion</label>
-                    <input type="number" name="nbKmAvionAnnuel" id="nbKmAvionAnnuel">
+                    <input type="number" max="6" min="0" name="nbKmAvionAnnuel" id="nbKmAvionAnnuel">
                 </div>
                 <div id="affichageAvion">
                     <h4>ANNUEL</h4>
-                    <h3>0</h3>
+                    <h3 id="affichage_avion">0</h3>
                 </div>
             </div>
         </div>

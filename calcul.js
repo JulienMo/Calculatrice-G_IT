@@ -1,5 +1,5 @@
 var rec = require("./ressources.json");
-var trans = require("./transport.json")
+var trans = require("./transport.js")
 
 function consoPC(HA) {
     HA = HA * 7;
