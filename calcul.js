@@ -18,6 +18,8 @@ function consoMoni(Nbmoni,HA)
     return uecMoni/10;
 }
 
+
+
 function transport(km,val) {
     const transp = trans.find(s=>s.id===val);
     if(val === 1)//#avion
@@ -50,13 +52,17 @@ function cloud(Go)
 {//1Mo=15gco2
     let Mo=Go*1000;
     let kgeco2=Mo*15/1000;
-    return kgeco2;
+    return kgeco2;              //return enkgeCo2
 }
 function mail(nbmail){
-
+    //10g /mail
+    return eco2mail=(nbmail*10)/1000; //return enkgeCo2
 }
 
+function feuille(nbfeuille)
+{//0.8 par feuille 
+    return eCo2feuille=(nbfeuille*0.8)/1000; //return enkgeCo2
+}
 
-km=1500;
 let Co2trans = km * transport(km,1);
 console.log(Co2trans);
