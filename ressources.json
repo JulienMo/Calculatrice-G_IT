@@ -1,0 +1,114 @@
+
+
+
+[
+      {
+      "id": 1,
+      "name": {
+        "fr": "Jour[s] de chauffage (gaz)"
+      },
+      "emoji": "🏘️",
+      "total": 18.63,
+      "default": true,
+      "defaultEmbed": true
+    },
+    {
+      "id":2,
+      "name": {
+        "fr": "km en voiture"
+      },
+      "emoji": "🚗",
+      "total": 0.193,
+      "default": true,
+      "defaultEmbed": true
+    },
+    {
+      "id": 3,
+      "name": {
+        "fr": "km en TGV"
+      },
+      "emoji": "🚅",
+      "total": 0.00173,
+      "default": true,
+      "defaultEmbed": true
+    },
+    {
+      "id": 4,
+      "name": {
+        "fr": "Smartphone[s]"
+      },
+      "emoji": "📱",
+      "total": 16.5,
+      "default": true,
+      "defaultEmbed": true
+    },
+
+    {
+      "id":5,
+      "name": {
+        "fr": "km en avion"
+      },
+      "emoji": "✈️",
+      "total": 0.186,
+      "default": true,
+      "defaultEmbed": false
+    },
+    {
+      "id": 6,
+      "name": {
+        "fr": "Ordinateur[s] portable[s]"
+      },
+      "emoji": "💻",
+      "total": 156,
+      "default": true,
+      "defaultEmbed": false
+    },
+    {
+      "id": 7,
+      "name": {
+        "fr": "Feuille[s] de papier A4"
+      },
+      "emoji": "📄",
+      "total": 0.00458,
+      "default": false,
+      "defaultEmbed": false
+    },
+    {
+      "id":8,
+      "name": {
+        "fr": "kg d'ordures ménagères"
+      },
+      "emoji": "🚮",
+      "total": 0.386,
+      "default": false,
+      "defaultEmbed": false
+    },
+    {
+      "id": 9,
+      "name": {
+        "fr": "Litre[s] d'eau du robinet"
+      },
+      "emoji": "🚰",
+      "total": 0.000132,
+      "default": true,
+      "defaultEmbed": false
+    },
+    {
+      "id": 10,
+      "name": {
+        "fr": "Litre[s] d'eau en bouteille"
+      },
+      "emoji": "💧",
+      "total": 0.453,
+      "default": true,
+      "defaultEmbed": false
+    },
+
+
+    {
+        "id": 10,
+        "total":125
+
+    }
+  ]
+  
