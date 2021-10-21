@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet calculatrice GREEN IT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <img src="img/logo_esaip.png" alt="Logo ESAIP">
+        <h1>CALCULATRICE POUR MON IMPACT ENVIRONNEMENTAL PRO. (EN KG EQ CO2)</h1>
+        <div id="sujet">
+            <h2>Travail à faire en GREEN IT - IR 4 GROUPE 1</h2>
+            <p>L’application devra être utilisable sur un navigateur et être responsive c’est-à-dire utilisable sur un smartphone. On appliquera les principes de l'éco conception logicielle . On devra également mesurer l’impact environnemental de la calculette
+                avec l’utilitaire http://www.ecoindex.fr/ Il est interdit d’utiliser php, java et mysql, wordpress, et autres cms.
+                <br> On peut par exemple utiliser python,nodejs,javascript, html5, bases de données nosql ou texte. On ne stocke pas les données personnelles du salarié comme le nom, le prénom, la date de naissance. On pourra consolider les informations
+                pour l’entreprise pour ses besoins statistiques.
+            </p>
+        </div>
+        <div id="solution">
+            <div id="equipement">
+                <h3>ÉQUIPEMENT</h3>
+                <div id="choixEquipement">
+                    <label for="choix_option">Choix de l'ordinateur portable</label>
+                    <select name="choix_option" id="choix_ordi">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                    <label for="nbanneeUtilisation">Nombre d'année d'utilisation</label>
+                    <input type="number" name="nbAnneeUtilisation" id="nbAnneeUtilisation" min="0" max="6">
+                    <label for="nbEcranSupp">Nombre d'écran supplémentaire</label>
+                    <input type="number" name="nbEcranSupp" id="nbEcranSupp" min="0" max="5">
+                    <label for="smartphone">Avez-vous un smartphone</label>
+                    <input type="radio" name="smartphone" id="ouiSmartphone">
+                    <label for="ouiSmartphone">Oui</label>
+                    <input type="radio" name="smartphone" id="nonSmartphone">
+                    <label for="nonSmartphone">Non</label>
+                </div>
+                <div id="affichageEquipement">
+                    <div>
+                        <h4>PRODUCTION</h4>
+                        <h3>0</h3>
+                    </div>
+                    <div>
+                        <h4>USAGE</h4>
+                        <h3>0</h3>
+                    </div>
+                    <div>
+                        <h4>TOTAL</h4>
+                        <h3>0</h3>
+                    </div>
+                    <div>
+                        <h4>ANNUEL</h4>
+                        <h3>0</h3>
+                    </div>
+                </div>
+            </div>
+            <div id="cloud">
+                <div id="choixCloud">
+                    <label for="nbGoCloud">Nombre de Go utilisé en Cloud</label>
+                    <input type="number" name="nbGoCloud" id="nbGoCloud">
+                    <label for="nbMailQuotidien">Nombre de mail envoyé quotidiennement</label>
+                    <input type="number" name="nbMailQuotidien" id="nbMailQuotidien">
+                </div>
+                <div id="affichageCloud">
+                    <div>
+                        <h4>QUOTIDIEN</h4>
+                        <h3>0</h3>
+                    </div>
+                    <div>
+                        <h4>ANNUEL</h4>
+                        <h3>0</h3>
+                    </div>
+                </div>
+            </div>
+            <div id="streaming">
+                <div id="choixStreaming">
+                    <label for="nbHeureStreamingQuotidien">Nombre d'heure de streaming par jour</label>
+                    <input type="number" name="nbHeureStreamingQuotidien" id="nbHeureStreamingQuotidien">
+                </div>
+                <div id="affichageStreaming">
+                    <div>
+                        <h4>QUOTIDIEN</h4>
+                        <h3>0</h3>
+                    </div>
+                    <div>
+                        <h4>ANNUEL</h4>
+                        <h3>0</h3>
+                    </div>
+                </div>
+            </div>
+            <div id="avion">
+                <div id="choixAvion">
+                    <label for="nbKmAvionAnnuel">Nombre de kilomètre parcouru annuellement en avion</label>
+                    <input type="number" name="nbKmAvionAnnuel" id="nbKmAvionAnnuel">
+                </div>
+                <div id="affichageAvion">
+                    <h4>ANNUEL</h4>
+                    <h3>0</h3>
+                </div>
+            </div>
+            <div id="trajetTravail">
+                <div id="choixTrajetTravail">
+                    <label for="nbKmAllerRetour">Nombre de kilomètre de votre trajet (Aller/Retour) quotidien pour aller au travail en Km</label>
+                    <input type="number" name="nbKmAllerRetour" id="nbKmAllerRetour">
+                    <label for="nbKmVoiture">Nombre de kilomètre réalisé en voiture</label>
+                    <input type="number" name="nbKmVoiture" id="nbKmVoiture" value="0">
+                    <label for="nbKmTransportCommun">Nombre de kilomètre réalisé en transport en commun</label>
+                    <input type="number" name="nbKmTransportCommun" id="nbKmTransportCommun" value="0">
+                    <label for="nbKmVelo">Nombre de kilomètre réalisé en vélo ou à pied</label>
+                    <input type="number" name="nbKmVelo" id="nbKmVelo" value="0">
+                </div>
+                <div id="affichageTrajetTravail">
+                    <h4>IMPACT D'UN ALLER RETOUR</h4>
+                    <h3>0</h3>
+                    <h3>0</h3>
+                    <h3>0</h3>
+                    <h4>TOTAL ANNUEL</h4>
+                    <h3>0</h3>
+                    <h3>0</h3>
+                    <h3>0</h3>
+                </div>
+            </div>
+        </div>
+        <div id="impact">
+            <div id="impactTot">
+                <div class="card">
+                    <img src="img/ordi.png" alt="Ordinateur">
+                    <h4>Mon impact numérique</h4>
+                    <h4 id="impactNumeriqueTotal">0</h4>
+                    <h6>Kg de CO2</h6>
+                </div>
+                <div class="card">
+                    <img src="img/horloge.jfif" alt="horloge">
+                    <h4>Mon impact de déplacement</h4>
+                    <h4 id="impactDeplacementQuotidienTotal">0</h4>
+                    <h6>Kg en CO2</h6>
+                </div>
+                <div class="card">
+                    <img src="img/calendrier.png" alt="calendrier">
+                    <h4>Mon impact annuel</h4>
+                    <h4 id="impactAnnuelTotal">0</h4>
+                    <h6>Kg en CO2</h6>
+                </div>
+            </div>
+            <div id="compensation">
+                <div class="card">
+                    <img src="img/arbre.jfif" alt="arbre">
+                    <h4>Nombre d'arbre pour compenser mon impact</h4>
+                    <h4 id="nbArbre">0</h4>
+                </div>
+                <div class="card">
+                    <img src="img/ampoule.jfif" alt="ampoule">
+                    <h4 id="nbAmpoule">Une ampoule allumé pendant 0 année(s)</h4>
+                </div>
+                <div class="card">
+                    <img src="img/vetement.png" alt="polaire">
+                    <h4>Production de polaire</h4>
+                    <h4 id="nbPolaire">0</h4>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
