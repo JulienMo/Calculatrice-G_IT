@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet calculatrice GREEN IT</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -25,25 +26,14 @@
             <div id="equipement">
                 <h3>ÉQUIPEMENT</h3>
                 <div id="choixEquipement">
-                    <label for="choix_option">Choix de l'ordinateur portable</label>
-                    <select name="choix_option" id="choix_ordi">
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
                     <label for="nbanneeUtilisation">Nombre d'année d'utilisation</label>
-                    <input type="number" name="nbAnneeUtilisation" id="nbAnneeUtilisation" min="0" max="6">
+                    <input type="number" name="nbAnneeUtilisation" id="nbAnneeUtilisation" onchange="consoMoni($('#nbEcranSupp').val(),$('#nbAnneeUtilisation').val())">
                     <label for="nbEcranSupp">Nombre d'écran supplémentaire</label>
-                    <input type="number" name="nbEcranSupp" id="nbEcranSupp" min="0" max="5">
+                    <input type="number" name="nbEcranSupp" id="nbEcranSupp" onchange="consoMoni($('#nbEcranSupp').val(),$('#nbAnneeUtilisation').val())">
                     <label for="smartphone">Avez-vous un smartphone</label>
-                    <input type="radio" name="smartphone" id="ouiSmartphone">
+                    <input type="radio" name="smartphone" id="ouiSmartphone" onchange="smart()">
                     <label for="ouiSmartphone">Oui</label>
-                    <input type="radio" name="smartphone" id="nonSmartphone">
+                    <input type="radio" name="smartphone" id="nonSmartphone" onchange="consoMoni($('#nbEcranSupp').val(),$('#nbAnneeUtilisation').val())">
                     <label for="nonSmartphone">Non</label>
                 </div>
                 <div id="affichageEquipement">
@@ -53,11 +43,11 @@
                     </div>
                     <div>
                         <h4>USAGE</h4>
-                        <h3>0</h3>
+                        <h3 id="equipementUsage">0</h3>
                     </div>
                     <div>
                         <h4>TOTAL</h4>
-                        <h3>0</h3>
+                        <h3 id="equipementTotal">0</h3>
                     </div>
                     <div>
                         <h4>ANNUEL</h4>
@@ -68,45 +58,15 @@
             <div id="cloud">
                 <div id="choixCloud">
                     <label for="nbGoCloud">Nombre de Go utilisé en Cloud</label>
-                    <input type="number" name="nbGoCloud" id="nbGoCloud">
+                    <input type="number" name="nbGoCloud" id="nbGoCloud" onchange="cloud($('#nbGoCloud').val())">
                     <label for="nbMailQuotidien">Nombre de mail envoyé quotidiennement</label>
-                    <input type="number" name="nbMailQuotidien" id="nbMailQuotidien">
+                    <input type="number" name="nbMailQuotidien" id="nbMailQuotidien" onchange="cloud($('#nbGoCloud').val())">
                 </div>
                 <div id="affichageCloud">
                     <div>
-                        <h4>QUOTIDIEN</h4>
-                        <h3>0</h3>
-                    </div>
-                    <div>
                         <h4>ANNUEL</h4>
-                        <h3>0</h3>
+                        <h3 id="affichageCloudAnnuel">0</h3>
                     </div>
-                </div>
-            </div>
-            <div id="streaming">
-                <div id="choixStreaming">
-                    <label for="nbHeureStreamingQuotidien">Nombre d'heure de streaming par jour</label>
-                    <input type="number" name="nbHeureStreamingQuotidien" id="nbHeureStreamingQuotidien">
-                </div>
-                <div id="affichageStreaming">
-                    <div>
-                        <h4>QUOTIDIEN</h4>
-                        <h3>0</h3>
-                    </div>
-                    <div>
-                        <h4>ANNUEL</h4>
-                        <h3>0</h3>
-                    </div>
-                </div>
-            </div>
-            <div id="avion">
-                <div id="choixAvion">
-                    <label for="nbKmAvionAnnuel">Nombre de kilomètre parcouru annuellement en avion</label>
-                    <input type="number" name="nbKmAvionAnnuel" id="nbKmAvionAnnuel">
-                </div>
-                <div id="affichageAvion">
-                    <h4>ANNUEL</h4>
-                    <h3>0</h3>
                 </div>
             </div>
             <div id="trajetTravail">
@@ -128,6 +88,16 @@
                     <h4>TOTAL ANNUEL</h4>
                     <h3>0</h3>
                     <h3>0</h3>
+                    <h3>0</h3>
+                </div>
+            </div>
+            <div id="avion">
+                <div id="choixAvion">
+                    <label for="nbKmAvionAnnuel">Nombre de kilomètre parcouru annuellement en avion</label>
+                    <input type="number" name="nbKmAvionAnnuel" id="nbKmAvionAnnuel">
+                </div>
+                <div id="affichageAvion">
+                    <h4>ANNUEL</h4>
                     <h3>0</h3>
                 </div>
             </div>
@@ -171,6 +141,7 @@
             </div>
         </div>
     </main>
+    <script src="./script.js"></script>
 </body>
 
 </html>

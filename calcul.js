@@ -1,69 +1,58 @@
 var rec = require("./ressources.json");
 var trans = require("./transport.json")
 
-function consoPC(HA)
-{
-    HA=HA*7;
-    let HO=168-HA;
-    let uec =  (0.3*(200*HA+7*HO)/7)*365/1000 + ((1-0.3)*(200*HA+7*HO)/7)*365/1000;
-    return uec/10;
+function consoPC(HA) {
+    HA = HA * 7;
+    let HO = 168 - HA;
+    let uec = (0.3 * (200 * HA + 7 * HO) / 7) * 365 / 1000 + ((1 - 0.3) * (200 * HA + 7 * HO) / 7) * 365 / 1000;
+    return uec / 10;
 }
 
-function consoMoni(Nbmoni,HA)
-{
-    HA=HA*7;
-    let HO=168-HA;
-    let uecMoni =  (0.3*(30*HA+7*HO)/7)*365/1000 + ((1-0.3)*(30*HA+7*HO)/7)*365/1000;
-    uecMoni=uecMoni*Nbmoni;
-    return uecMoni/10;
+function consoMoni(Nbmoni, HA) {
+    HA = HA * 7;
+    let HO = 168 - HA;
+    let uecMoni = (0.3 * (30 * HA + 7 * HO) / 7) * 365 / 1000 + ((1 - 0.3) * (30 * HA + 7 * HO) / 7) * 365 / 1000;
+    if (!Nbmoni) {
+        uecMoni = uecMoni * Nbmoni;
+    }
+    return uecMoni / 10;
 }
 
-function transport(km,val) {
-    const transp = trans.find(s=>s.id===val);
+function transport(km, val) {
+    const transp = trans.find(s => s.id === val);
     let tr;
-    if(val === 1)//#avion
+    if (val === 1) //#avion
     {
-        
-        if(km<1000)
-        {
-            tr= transp.values.find(s=>s.max===1000).value;
-        }    
-        else if(km<2000)
-        {
-            tr= transp.values.find(s=>s.max===2000).value;
-        }
-        else if(km<3500)
-        {
-            tr= transp.values.find(s=>s.max===3500).value;
-        }
-        else{
-            tr= transp.values.find(s=>s.max===10).value;
+
+        if (km < 1000) {
+            tr = transp.values.find(s => s.max === 1000).value;
+        } else if (km < 2000) {
+            tr = transp.values.find(s => s.max === 2000).value;
+        } else if (km < 3500) {
+            tr = transp.values.find(s => s.max === 3500).value;
+        } else {
+            tr = transp.values.find(s => s.max === 10).value;
         }
 
+    } else {
+        tr = transp.values.find(s => s.value)
     }
-    else
-    {
-        tr = transp.values.find(s=>s.value)
-    }
-    
-    return Co2trans = km * tr/1000;
+
+    return Co2trans = km * tr / 1000;
 }
 
 
-function cloud(Go)
-{//1Mo=15gco2
-    let Mo=Go*1000;
-    let kgeco2=Mo*15/1000;
-    return kgeco2;              //return enkgeCo2
+function cloud(Go) { //1Mo=15gco2
+    let Mo = Go * 1000;
+    let kgeco2 = Mo * 15 / 1000;
+    return kgeco2; //return enkgeCo2
 }
 
-function mail(nbmail){
+function mail(nbmail) {
     //10g /mail
-    return eco2mail=(nbmail*10)/1000; //return enkgeCo2
+    return eco2mail = (nbmail * 10) / 1000; //return enkgeCo2
 }
 
-function feuille(nbfeuille)
-{//0.8 par feuille 
-    return eCo2feuille=(nbfeuille*0.8)/1000; //return enkgeCo2
+function feuille(nbfeuille) { //0.8 par feuille 
+    return eCo2feuille = (nbfeuille * 0.8) / 1000; //return enkgeCo2
 }
-
