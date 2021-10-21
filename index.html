@@ -86,15 +86,15 @@
                     <h3 id="affichage_bus">0</h3>
                     <h3 id="affichage_pieds">0</h3>
                     <h4>TOTAL ANNUEL</h4>
-                    <h3>0</h3>
-                    <h3>0</h3>
+                    <h3 id="affichage_voiture_annuel">0</h3>
+                    <h3 id="affichage_bus_annuel">0</h3>
                     <h3>0</h3>
                 </div>
             </div>
             <div id="avion">
                 <div id="choixAvion">
                     <label for="nbKmAvionAnnuel">Nombre de kilomètre parcouru annuellement en avion</label>
-                    <input type="number" max="6" min="0" name="nbKmAvionAnnuel" id="nbKmAvionAnnuel">
+                    <input type="number" max="6" min="0" name="nbKmAvionAnnuel" id="nbKmAvionAnnuel" onchange="transport($('#nbKmAvionAnnuel').val(),1)">
                 </div>
                 <div id="affichageAvion">
                     <h4>ANNUEL</h4>
@@ -112,14 +112,14 @@
                 </div>
                 <div class="card">
                     <img src="img/horloge.jfif" alt="horloge">
-                    <h4>Mon impact de déplacement</h4>
-                    <h4 id="impactDeplacementQuotidienTotal">0</h4>
+                    <h4>Mon impact de déplacement annuel</h4>
+                    <h4 id="impactDeplacementTotal">0</h4>
                     <h6>Kg en CO2</h6>
                 </div>
                 <div class="card">
                     <img src="img/calendrier.png" alt="calendrier">
                     <h4>Mon impact annuel</h4>
-                    <h4 id="impactAnnuelTotal">0</h4>
+                    <h4 id="impactTotal">0</h4>
                     <h6>Kg en CO2</h6>
                 </div>
             </div>

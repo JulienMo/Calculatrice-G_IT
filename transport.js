@@ -1,99 +1,3 @@
-let affichage_avion = $('#affichage_avion');
-let affichage_voiture = $('#affichage_voiture');
-let affichage_bus = $('#affichage_bus');
-let affichage_pieds = $('#affichage_pieds');
-
-let affichage_voiture_annuel = $('#affichage_voiture_annuel');
-let affichage_bus_annuel = $('#affichage_bus_annuel');
-
-let ttNum = 0;
-let ttMoni = 0;
-let ttCloud = 0;
-let ttTransport = 0;
-let ttTransportVoit = 0;
-let ttTransportBus = 0;
-let ttTransportAvion = 0;
-
-function totalImpact() {
-    ttNum = ttMoni + ttCloud;
-    ttTransport = ttTransportVoit + ttTransportBus + ttTransportAvion;
-    $('#impactNumeriqueTotal').text(ttNum.toFixed(2));
-    $('#impactDeplacementTotal').text(ttTransport.toFixed(2));
-    $('#impactTotal').text((ttNum + ttTransport).toFixed(2));
-}
-
-function consoMoni(Nbmoni, HA) {
-    HA = HA * 7;
-    let HO = 168 - HA;
-    let uec = (0.3 * (200 * HA + 7 * HO) / 7) * 365 / 1000 + ((1 - 0.3) * (200 * HA + 7 * HO) / 7) * 365 / 1000;
-    let uecMoni = (0.3 * (30 * HA + 7 * HO) / 7) * 365 / 1000 + ((1 - 0.3) * (30 * HA + 7 * HO) / 7) * 365 / 1000;
-    if (Nbmoni) {
-        uecMoni = uec + uecMoni * Nbmoni;
-    }
-    $('#equipementUsage').text(uecMoni.toFixed(2));
-    ttMoni = uecMoni;
-    totalImpact();
-    return uecMoni;
-}
-
-function smart() {
-    let uec = consoMoni($('#nbEcranSupp').val(), $('#nbAnneeUtilisation').val()) + 7;
-    ttMoni += 7;
-    totalImpact();
-    $('#equipementUsage').text(uec.toFixed(2));
-}
-
-function cloud(Go) {
-    let Mo = Go * 1000;
-    let kgeco2 = Mo * 15 / 1000;
-    if ($('#nbMailQuotidien').val()) {
-        kgeco2 += ($('#nbMailQuotidien').val() * 10 * 365) / 1000;
-    }
-    $('#affichageCloudAnnuel').text(kgeco2.toFixed(2));
-    ttCloud = kgeco2;
-    totalImpact();
-}
-
-function transport(km, val) {
-    const transp = trans.find(s => s.id === val);
-    let tr;
-    if (val === 1) //#avion
-    {
-        if (km < 1000) {
-            tr = transp.values.find(s => s.max === 1000).value;
-            affichage_avion.text(km * tr / 1000);
-            ttTransportAvion = km * tr / 1000;
-        } else if (km < 2000) {
-            tr = transp.values.find(s => s.max === 2000).value;
-            affichage_avion.text(km * tr / 1000);
-            ttTransportAvion = km * tr / 1000;
-        } else if (km < 3500) {
-            tr = transp.values.find(s => s.max === 3500).value;
-            affichage_avion.text(km * tr / 1000);
-            ttTransportAvion = km * tr / 1000;
-        } else {
-            tr = transp.values.find(s => s.max === 10).value;
-            affichage_avion.text(km * tr / 1000);
-            ttTransportAvion = km * tr / 1000;
-        }
-
-    } else if (val === 3) {
-        tr = transp.values.find(s => s.max === 1).value;
-        affichage_voiture.text(km * tr / 1000);
-        affichage_voiture_annuel.text((km * tr / 1000 * 365).toFixed(2));
-        ttTransportVoit = km * tr / 1000 * 365;
-    } else if (val === 5) {
-        tr = transp.values.find(s => s.max === 1).value;
-        affichage_pieds = km * tr / 1000 * 365;
-    } else if (val === 7) {
-        tr = transp.values.find(s => s.max === 1).value;
-        affichage_bus.text(km * tr / 1000);
-        affichage_bus_annuel.text((km * tr / 1000 * 365).toFixed(2));
-        ttTransportBus = km * tr / 1000 * 365;
-    } else {}
-    totalImpact();
-}
-
 let trans = [{
         "id": 1,
         "label": {
@@ -157,7 +61,6 @@ let trans = [{
         "default": true,
         "display": {},
         "values": [{
-            "max": 1,
             "value": 193
         }],
         "carpool": 5
@@ -192,7 +95,6 @@ let trans = [{
             "max": 30
         },
         "values": [{
-            "max": 1,
             "value": 0
         }]
     },
@@ -228,7 +130,6 @@ let trans = [{
             "max": 15
         },
         "values": [{
-            "max": 1,
             "value": 103
         }]
     },
@@ -286,4 +187,4 @@ let trans = [{
     }
 
 
-];
+]
