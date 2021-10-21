@@ -18,33 +18,35 @@ function consoMoni(Nbmoni,HA)
     return uecMoni/10;
 }
 
-
-
 function transport(km,val) {
     const transp = trans.find(s=>s.id===val);
+    let tr;
     if(val === 1)//#avion
     {
+        
         if(km<1000)
         {
-            return transp.values.find(s=>s.max===1000).value;
+            tr= transp.values.find(s=>s.max===1000).value;
         }    
         else if(km<2000)
         {
-            return transp.values.find(s=>s.max===2000).value;
+            tr= transp.values.find(s=>s.max===2000).value;
         }
         else if(km<3500)
         {
-            return transp.values.find(s=>s.max===3500).value;
+            tr= transp.values.find(s=>s.max===3500).value;
         }
         else{
-            return transp.values.find(s=>s.max===10).value;
+            tr= transp.values.find(s=>s.max===10).value;
         }
 
     }
     else
     {
-    return transp.values.find(s=>s.value)
+        tr = transp.values.find(s=>s.value)
     }
+    
+    return Co2trans = km * tr/1000;
 }
 
 
@@ -54,6 +56,7 @@ function cloud(Go)
     let kgeco2=Mo*15/1000;
     return kgeco2;              //return enkgeCo2
 }
+
 function mail(nbmail){
     //10g /mail
     return eco2mail=(nbmail*10)/1000; //return enkgeCo2
@@ -64,5 +67,3 @@ function feuille(nbfeuille)
     return eCo2feuille=(nbfeuille*0.8)/1000; //return enkgeCo2
 }
 
-let Co2trans = km * transport(km,1);
-console.log(Co2trans);
